@@ -1,2 +1,17 @@
-package com.example.btlquanganh;public class RegularCustomer {
+package com.example.btlquanganh;
+
+import java.util.ArrayList;
+
+public final class RegularCustomer extends Customer {
+    public RegularCustomer(String[] attributes, ArrayList<String> rentals){
+        super(attributes,(ArrayList<String>) rentals.clone());
+    }
+
+    @Override
+    public void rent(Item item) throws RentalExceptions {
+        if(item.rentalStatus <= 0)
+            throw new RentalExceptions("Rental item limit exceed");
+        item.rentalStatus = item.rentalStatus -1;
+        this.rentals.add(item.ID);
+    }
 }
