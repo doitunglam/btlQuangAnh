@@ -24,9 +24,9 @@ public class AdminView implements Initializable {
     private Label welcomeText;
 
     @FXML
-    private TableView<Item> itemTable = new TableView<>();
+    private final TableView<Item> itemTable = new TableView<>();
     @FXML
-    private TableView<Customer> customerTable = new TableView<>();
+    private final TableView<Customer> customerTable = new TableView<>();
 
     @FXML
     private TabPane mainTabPane;
@@ -110,11 +110,11 @@ public class AdminView implements Initializable {
     }
 
     public void onLogoutMenuClick(ActionEvent actionEvent) throws IOException {
-        String outPath = new String("./data/customers.txt");
+        String outPath = "./data/customers.txt";
         File outFile = new File(outPath);
         outFile.createNewFile();
         FileHandler.writeCustomerToFile(outPath,PublicDataHouse.customerArrayList);
-        outPath = new String("./data/items.txt");
+        outPath = "./data/items.txt";
         outFile = new File(outPath);
         outFile.createNewFile();
         FileHandler.writeItemToFile(outPath,PublicDataHouse.itemArrayList);

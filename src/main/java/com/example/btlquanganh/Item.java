@@ -30,25 +30,31 @@ public class Item {
 
     public StringProperty IDProperty() {
         return new SimpleStringProperty(ID);
-    };
+    }
+
     public StringProperty titleProperty() {
         return new SimpleStringProperty(title);
-    };
+    }
+
     public StringProperty rentTypeProperty() {
         return new SimpleStringProperty(rentType);
-    };
+    }
+
     public IntegerProperty rentalStatusProperty() {
         return new SimpleIntegerProperty(rentalStatus);
-    };
+    }
+
     public StringProperty loanTypeProperty() {
         return new SimpleStringProperty(loanType);
-    };
+    }
+
     public FloatProperty rentalFeeProperty() {
         return new SimpleFloatProperty(rentalFee);
-    };
+    }
+
     public StringProperty genreProperty() {
         return new SimpleStringProperty(genre);
-    };
+    }
 
 
 }

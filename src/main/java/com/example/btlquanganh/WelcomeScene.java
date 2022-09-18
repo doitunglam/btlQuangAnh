@@ -18,9 +18,9 @@ public class WelcomeScene {
     public void onLoginButtonClicked(MouseEvent mouseEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         String username = usernameTextField.getText();
-        if (username.equals("a") && passwordPasswordField.getText().equals("a")) {
+        if (username.equals("admin") && passwordPasswordField.getText().equals("admin")) {
             alert.setTitle("Welcome");
-            alert.setHeaderText("Good morning, boss");
+            alert.setHeaderText("Good morning, admin");
             alert.setContentText("Enter the privileged zone");
             alert.showAndWait();
             Parent pane = FXMLLoader.load(getClass().getResource("AdminView.fxml"));

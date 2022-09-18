@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 public abstract class Customer {
     private String ID;
-    private String name;
-    private String address;
-    private String phone;
+    private final String name;
+    private final String address;
+    private final String phone;
     protected ArrayList<String> rentals;
     protected Integer numberOfRentals;
     public String username;
-    private String password;
+    private final String password;
     private String[] attributes = null;
 
     public Customer(String name, String address, String phone, ArrayList<String> rentals, String username, String password) {
@@ -38,8 +38,7 @@ public abstract class Customer {
     }
 
     public boolean authentication(String password) {
-        if (this.password.equals(password)) return true;
-        else return false;
+        return this.password.equals(password);
     }
 
     abstract void rentItem(Item item) throws RentalExceptions;

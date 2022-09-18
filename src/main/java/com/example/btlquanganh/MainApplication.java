@@ -17,7 +17,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        this.stage = stage;
+        MainApplication.stage = stage;
         Parent pane = FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"));
         SceneController.scene.setRoot(pane);
         stage.setTitle("Welcome!");
