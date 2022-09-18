@@ -94,18 +94,10 @@ public class AdminView implements Initializable {
     public void onUpdateItemMenuClick(ActionEvent actionEvent) {
     }
 
-    public void onDeleteItemMenuClick(ActionEvent actionEvent) throws IOException{
-        Tab newTab = new Tab("Delete Item");
-        BorderPane pane = FXMLLoader.load(getClass().getResource("DeleteItemTab.fxml"));
-        newTab.setContent(pane);
-        mainTabPane.getTabs().add(newTab);
+    public void onDeleteItemMenuClick(ActionEvent actionEvent) {
     }
 
-    public void onAddCustomerMenuClick(ActionEvent actionEvent) throws IOException {
-        Tab newTab = new Tab("Add Customer");
-        BorderPane pane = FXMLLoader.load(getClass().getResource("AddCustomerTab.fxml"));
-        newTab.setContent(pane);
-        mainTabPane.getTabs().add(newTab);
+    public void onAddCustomerMenuClick(ActionEvent actionEvent) {
     }
 
     public void onUpdateCustomerMenuClick(ActionEvent actionEvent) {
