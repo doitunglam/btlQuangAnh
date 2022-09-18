@@ -16,8 +16,8 @@ public class Item {
     public Item(String[] attributes) {
         this.ID = attributes[0];
         this.title = attributes[1];
-        this.rentType = attributes[2];
-        this.loanType = attributes[3];
+        this.rentType = attributes[3];
+        this.loanType = attributes[2];
         this.rentalStatus = Integer.parseInt(attributes[4]);
         this.rentalFee = Float.parseFloat(attributes[5]);
         if (attributes.length != 6)

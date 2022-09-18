@@ -14,6 +14,7 @@ public abstract class Customer {
     protected Integer numberOfRentals;
     public String username;
     private String password;
+    private String[] attributes = null;
 
     public Customer(String name, String address, String phone, ArrayList<String> rentals, String username, String password) {
         this.name = name;
@@ -25,6 +26,7 @@ public abstract class Customer {
     }
 
     public Customer(String[] attributes, ArrayList<String> rentals) {
+        this.attributes = attributes;
         this.ID = attributes[0];
         this.name = attributes[1];
         this.address = attributes[2];
@@ -40,9 +42,15 @@ public abstract class Customer {
         else return false;
     }
 
-    abstract void rent(Item item) throws RentalExceptions;
+    abstract void rentItem(Item item) throws RentalExceptions;
+    abstract void returnItem(String itemID) throws RentalExceptions;
 
-    public StringProperty IDProperty() {
+    public String[] getAttributes()
+    {
+        return attributes;
+    }
+
+    StringProperty IDProperty() {
         return new SimpleStringProperty(ID);
     }
     public StringProperty nameProperty(){

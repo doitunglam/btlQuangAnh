@@ -1,7 +1,6 @@
 package com.example.btlquanganh;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,6 +35,8 @@ public class FileHandler {
                 String inputLine = readerScanner.nextLine();
                 if (!inputLine.startsWith("#")) {
                     String[] dataArray = inputLine.split(",");
+                    for (int i = 0; i< dataArray.length;i++)
+                        dataArray[i] = dataArray[i].trim();
                     boolean isLastLine = !readerScanner.hasNextLine();
                     if (dataArray.length == 8) {
                         if (currentCustomerData != null) {
@@ -67,5 +68,17 @@ public class FileHandler {
             throw new RuntimeException(e);
         }
         return returnList;
+    }
+    static public void writeCustomerToFile(String path,ArrayList<Customer> data) throws IOException
+    {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+        for(Customer cs:data)
+        {
+            writer.append(String.join(",",cs.getAttributes())+'\n');
+            for(String rt:cs.rentals)
+                writer.append(rt+'\n');
+        }
+        writer.close();
+
     }
 }

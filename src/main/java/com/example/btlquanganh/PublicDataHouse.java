@@ -13,4 +13,6 @@ public class PublicDataHouse {
     {
         customerArrayList = input;
     }
+
+    static Customer currentCustomer = null;
 }
