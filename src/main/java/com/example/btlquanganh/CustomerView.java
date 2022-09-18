@@ -34,11 +34,11 @@ public class CustomerView implements Initializable {
     }
 
     public void onLogoutButtonClick(MouseEvent mouseEvent) throws IOException {
-        String outPath = new String("./data/customer1.txt");
+        String outPath = new String("./data/customers.txt");
         File outFile = new File(outPath);
         outFile.createNewFile();
         FileHandler.writeCustomerToFile(outPath,PublicDataHouse.customerArrayList);
-        outPath = new String("./data/item1.txt");
+        outPath = new String("./data/items.txt");
         outFile = new File(outPath);
         outFile.createNewFile();
         FileHandler.writeItemToFile(outPath,PublicDataHouse.itemArrayList);
