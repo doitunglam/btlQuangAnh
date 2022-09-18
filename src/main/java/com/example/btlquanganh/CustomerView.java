@@ -38,6 +38,10 @@ public class CustomerView implements Initializable {
         File outFile = new File(outPath);
         outFile.createNewFile();
         FileHandler.writeCustomerToFile(outPath,PublicDataHouse.customerArrayList);
+        outPath = new String("./data/item1.txt");
+        outFile = new File(outPath);
+        outFile.createNewFile();
+        FileHandler.writeItemToFile(outPath,PublicDataHouse.itemArrayList);
         Parent pane = FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"));
         SceneController.scene.setRoot(pane);
         MainApplication.stage.setHeight(350);

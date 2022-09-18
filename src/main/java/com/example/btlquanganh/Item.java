@@ -13,7 +13,10 @@ public class Item {
         and not greater than 0 denotes not available */
     Integer rentalStatus;
 
+    public String[] attributes;
+
     public Item(String[] attributes) {
+        this.attributes = attributes;
         this.ID = attributes[0];
         this.title = attributes[1];
         this.rentType = attributes[3];
@@ -23,6 +26,7 @@ public class Item {
         if (attributes.length != 6)
             this.genre = attributes[6];
     }
+
 
     public StringProperty IDProperty() {
         return new SimpleStringProperty(ID);

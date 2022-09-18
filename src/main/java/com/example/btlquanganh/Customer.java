@@ -50,7 +50,7 @@ public abstract class Customer {
         return attributes;
     }
 
-    StringProperty IDProperty() {
+    public StringProperty IDProperty() {
         return new SimpleStringProperty(ID);
     }
     public StringProperty nameProperty(){

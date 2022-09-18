@@ -79,6 +79,12 @@ public class FileHandler {
                 writer.append(rt+'\n');
         }
         writer.close();
-
+    }
+    static public void writeItemToFile(String path,ArrayList<Item> data) throws IOException
+    {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+        for(Item it:data)
+            writer.append(String.join(",",it.attributes)+'\n');
+        writer.close();
     }
 }

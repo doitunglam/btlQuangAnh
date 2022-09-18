@@ -6,11 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -97,9 +99,28 @@ public class AdminView implements Initializable {
     public void onDeleteItemMenuClick(ActionEvent actionEvent) {
     }
 
-    public void onAddCustomerMenuClick(ActionEvent actionEvent) {
+    public void onAddCustomerMenuClick(ActionEvent actionEvent)throws IOException {
+//        Tab newTab = new Tab("Add Customer");
+//        BorderPane pane = FXMLLoader.load(getClass().getResource("AddCustomerTab.fxml"));
+//        newTab.setContent(pane);
+//        mainTabPane.getTabs().add(newTab);
     }
 
     public void onUpdateCustomerMenuClick(ActionEvent actionEvent) {
+    }
+
+    public void onLogoutMenuClick(ActionEvent actionEvent) throws IOException {
+        String outPath = new String("./data/customer1.txt");
+        File outFile = new File(outPath);
+        outFile.createNewFile();
+        FileHandler.writeCustomerToFile(outPath,PublicDataHouse.customerArrayList);
+        outPath = new String("./data/item1.txt");
+        outFile = new File(outPath);
+        outFile.createNewFile();
+        FileHandler.writeItemToFile(outPath,PublicDataHouse.itemArrayList);
+        Parent pane = FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"));
+        SceneController.scene.setRoot(pane);
+        MainApplication.stage.setHeight(350);
+        MainApplication.stage.setWidth(450);
     }
 }
